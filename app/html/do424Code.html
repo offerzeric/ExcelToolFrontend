@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMAC 424 Coding</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <script type="text/javascript" src="jquery/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="do424Code.css" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="bgpic">
+
+    <!-- nav bar -->
+    <div class="container col-12 col-sm-12 p-0">
+      <nav class="navbar navbar-dark bg-primary">
+        <span class="navbar-brand" href="#">
+          <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+          COMAC 424 Coding System
+        </span>
+
+        <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active align-self-end">
+              <a class="nav-link" href="http://localhost:9091/424Code">
+                LOG OUT
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- operation panel -->
+    <div class="container col-12 col-sm-12 p-0">
+      <div class="row justify-content-between operation-panel">
+
+        <!-- button panel -->
+        <div class="col-3 col-sm-3">
+          <div>
+
+            <form action="" method="post" enctype="multipart/form-data" class="custom_form">
+              <label class="btn btn-secondary btn-lg custom_button choose_file_button" for="source-files-uploader">请选择后缀为.xlsx的文件</label>
+              <input type="file" name="sourceSheetFiles" class="btn btn-secondary btn-lg custom_button"
+                id="source-files-uploader" accept=".xlsx" multiple hidden />
+              <input type="submit" class="btn btn-secondary btn-lg custom_button custom_button_submit" value="开始上传">
+            </form>
+
+          </div>
+          <div>
+            <button type="button" class="btn btn-secondary btn-lg custom_button start_code_button">开始编码</button>
+          </div>
+          <div>
+            <label class="btn btn-secondary btn-lg custom_button preview_code_button" for="result-files-uploader">请选择需要预览的Excel</label>
+            <input type="file" name="resultSheetFiles" class="btn btn-secondary btn-lg custom_button"
+              id="result-files-uploader" accept=".xlsx" multiple hidden />
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- coding msg panel -->
+      <div class="container col-12 col-sm-12 p-0">
+        <div class="row operation-panel">
+
+          <div class="col-12 col-sm-12">
+            <div class="list-group code-msg-panel" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action disabled list-group-item-dark" id="list-home-list"
+                data-toggle="list" href="#list-home" role="tab" aria-controls="home">编码运行信息</a>
+              <div class="coding-msg-panel"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!--  source + excel -->
+      <div class="container col-12 col-sm-12 p-0">
+        <div class="row justify-content-between information-panel">
+
+          <!-- source list group -->
+          <div class="col-3 col-sm-3 file-list-panel">
+            <div class="list-group source-list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action disabled list-group-item-dark source-list-group-start"
+                id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="">源文件列表</a>
+
+            </div>
+          </div>
+
+          <!-- Excel panel -->
+          <div class="col-8 col-sm-8 excel-panel">
+            <div class="list-group excel-panel-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action disabled list-group-item-dark" id="list-home-list"
+                data-toggle="list" href="#list-home" role="tab" aria-controls="">源文件Excel预览</a>
+              <div id="source-excel-btns"></div>
+              <div id="source-excel-panel"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!--  result + excel -->
+      <div class="container col-12 col-sm-12 p-0">
+        <div class="row justify-content-between information-panel">
+
+          <!-- result list group -->
+          <div class="col-3 col-sm-3 file-list-panel">
+            <div class="list-group result-list-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action disabled list-group-item-dark" id="list-home-list"
+                data-toggle="list" href="#list-home" role="tab" aria-controls="">结果文件列表</a>
+
+
+            </div>
+          </div>
+
+          <!-- Excel panel -->
+          <div class="col-8 col-sm-8 excel-panel">
+            <div class="list-group excel-panel-group" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action disabled list-group-item-dark" id="list-home-list"
+                data-toggle="list" href="#list-home" role="tab" aria-controls="">结果文件Excel预览</a>
+              <div id="result-excel-btns"></div>
+              <div id="result-excel-panel"></div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="axios/dist/axios.min.js"></script>
+    <script src="do424Code.js" type="module" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
