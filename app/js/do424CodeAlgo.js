@@ -118,8 +118,8 @@ class CodeAlgo {
    * @param {*} curFiles
    */
   static async callUploadFiles(curFiles) {
-    // let domain = "http://192.168.3.9:9092";
-    let domain = "http://127.0.0.1:5000";
+    let domain = "http://192.168.3.9:9092";
+    // let domain = "http://127.0.0.1:5000";
     console.log(domain + "/code/do424Upload");
     var customForm = document.querySelector(".custom_form");
     customForm.addEventListener("submit", (e) => {
@@ -158,8 +158,8 @@ class CodeAlgo {
    */
   static async startCode() {
     console.log("开始对源文件编码.");
-    // let domain = "http://192.168.3.9:9092";
-    let domain = "http://127.0.0.1:5000";
+    let domain = "http://192.168.3.9:9092";
+    // let domain = "http://127.0.0.1:5000";
     console.log(domain + "/code/do424Code");
     //调用后端424编码接口
     await axios
@@ -248,8 +248,8 @@ class CodeAlgo {
    */
   static async downloadSingleCode(filenameParam) {
     console.log("下载424编码.");
-    // let domain = "http://192.168.3.9:9092";
-    let domain = "http://127.0.0.1:5000";
+    let domain = "http://192.168.3.9:9092";
+    // let domain = "http://127.0.0.1:5000";
     //调用后端下载文件接口
     console.log(domain + "/code/do424Download");
     await axios
