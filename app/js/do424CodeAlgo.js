@@ -124,6 +124,7 @@ class CodeAlgo {
     var customForm = document.querySelector(".custom_form");
     customForm.addEventListener("submit", (e) => {
       //阻止表单提交的默认跳转页面操作
+      //test
       e.preventDefault();
       const formData = new FormData(customForm);
       axios
