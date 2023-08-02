@@ -6,7 +6,7 @@ const path = require('path');
 
 
 /**
- * environment setting
+ * 设置框架环境
  */
 var app = express();
 app.use(cors());
@@ -20,7 +20,7 @@ app.use(express.static('app/static'))
 
 
 /**
- * initial entrypoint
+ * 424编码页面接口
  */
 app.get('/424Code', (req, res) => {
   let currentDirPath = __dirname
@@ -30,7 +30,7 @@ app.get('/424Code', (req, res) => {
 
 
 /**
- * main
+ * main主程序入口
  */
 var port = process.env.PORT || 9091;
 // app.use(express.static('static'));
